@@ -5,7 +5,16 @@ import axios from 'axios'
 const events = ref(null)
 
 onMounted(() => {
-  // get events from mock db when component is created
+  axios
+    .get(
+      'https://my-json-server.typicode.com/yxj0312/real-world-vue-3-composition-api/events'
+    )
+    .then((response) => {
+      events.value = response.data
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 })
 </script>
 
