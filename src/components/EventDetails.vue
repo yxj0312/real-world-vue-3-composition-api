@@ -1,3 +1,10 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const event = ref(null)
+
+onMounted(() => {})
+</script>
 <template>
   <div>
     <h1>{{ event.title }}</h1>
