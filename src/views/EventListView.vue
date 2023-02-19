@@ -6,9 +6,7 @@ import { ref, onMounted } from 'vue'
 const events = ref(null)
 
 onMounted(() => {
-  EventService.getEvents(
-    'https://my-json-server.typicode.com/yxj0312/real-world-vue-3-composition-api/events'
-  )
+  EventService.getEvents()
     .then((response) => {
       events.value = response.data
     })
