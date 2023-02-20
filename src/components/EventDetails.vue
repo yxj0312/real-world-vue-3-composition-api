@@ -3,11 +3,12 @@ import { ref, onMounted } from 'vue'
 import EventService from '@/services/EventService.js'
 
 const event = ref(null)
+const id = ref(123)
 
 onMounted(() => {
-  EventService.getEvent(id)
+  EventService.getEvent(id.value)
     .then((response) => {
-      events.value = response.data
+      event.value = response.data
     })
     .catch((error) => {
       console.log(error)
