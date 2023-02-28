@@ -4,6 +4,7 @@ import EventDetailsView from '../views/EventDetailsView.vue'
 import AboutView from '../views/AboutView.vue'
 
 const router = createRouter({
+  // history for spa
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
