@@ -1,5 +1,14 @@
 # deploy seite
+
 <https://dashboard.render.com/>
+
+- Vue3 Form
+- Pinia Fundamentals
+- Touring Vue Router
+- Unit Testing
+- Token-Based Authentication
+- Scaling Vue with Nuxt.js
+- Beautify with Vuetify
 
 # real-world-vue-3-composition-api
 
