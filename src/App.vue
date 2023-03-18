@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { useUserStore } from './stores/UserStore'
+
+const useStore = useUserStore()
 </script>
 
 <template>
@@ -9,6 +12,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <nav>
           <RouterLink :to="{ name: 'event-list' }">Events</RouterLink> |
           <RouterLink :to="{ name: 'about' }">About</RouterLink>
+          |
+          <p>Logged in as {{ useStore.user }}</p>
         </nav>
       </div>
     </header>
