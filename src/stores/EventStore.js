@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import EventService from '../services/EventService.js'
 
 export const useEventStore = defineStore('EventStore', {
   state() {
@@ -9,5 +10,16 @@ export const useEventStore = defineStore('EventStore', {
   },
   getters: {
     numberOfEvents: (state) => state.events.length,
+  },
+  actions: {
+    fetchEvent({ commit }, id) {
+      return EventService.getEvent(id)
+        .then((response) => {
+          commit('SET_EVENT', response.data)
+        })
+        .catch((error) => {
+          throw error
+        })
+    },
   },
 })
