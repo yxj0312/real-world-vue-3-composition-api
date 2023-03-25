@@ -2,7 +2,6 @@
 import EventCard from '@/components/EventCard.vue'
 import EventService from '@/services/EventService.js'
 import { ref, onMounted } from 'vue'
-import { useEventStore } from '@/services/EventService.js'
 
 const events = ref(null)
 
