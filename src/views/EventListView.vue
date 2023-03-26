@@ -2,22 +2,23 @@
 import EventCard from '@/components/EventCard.vue'
 import EventService from '@/services/EventService.js'
 import { ref, onMounted } from 'vue'
+import { useEventStore } from '../stores/EventStore'
 
 const events = ref(null)
+const eventStore = useEventStore()
 
 onMounted(() => {
-  EventService.getEvents()
-    .then((response) => {
-      events.value = response.data
+  this.eventStore.fetchEvents().catch((error) => {
+    this.$router.push({
+      name: 'ErrorDisplay',
+      params: { error: error },
     })
-    .catch((error) => {
-      console.log(error)
-    })
+  })
 })
 </script>
 
 <template>
-  <h1>Events For Good</h1>
+  <h1>{{ eventStore.numberOfEvents }}Events For Good</h1>
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
