@@ -8,7 +8,10 @@ const events = ref(null)
 const eventStore = useEventStore()
 
 onMounted(() => {
-  this.eventStore.fetchEvents().catch((error) => {
+  console.log('§212')
+  console.log('!23')
+
+  eventStore.fetchEvents().catch((error) => {
     this.$router.push({
       name: 'ErrorDisplay',
       params: { error: error },
@@ -20,6 +23,7 @@ onMounted(() => {
 <template>
   <h1>{{ eventStore.numberOfEvents }}Events For Good</h1>
   <div class="events">
+    {{ eventStore }}
     <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
