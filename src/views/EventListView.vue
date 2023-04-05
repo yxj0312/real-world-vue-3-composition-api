@@ -18,9 +18,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>{{ eventStore.numberOfEvents }}Events For Good</h1>
+  <h1>{{ eventStore.numberOfEvents }} Events For Good</h1>
   <div class="events">
-    {{ eventStore }}
     <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
