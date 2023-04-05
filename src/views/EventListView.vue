@@ -8,9 +8,6 @@ const events = ref(null)
 const eventStore = useEventStore()
 
 onMounted(() => {
-  console.log('§212')
-  console.log('!23')
-
   eventStore.fetchEvents().catch((error) => {
     this.$router.push({
       name: 'ErrorDisplay',
