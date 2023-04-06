@@ -12,10 +12,19 @@ export const useEventStore = defineStore('EventStore', {
     numberOfEvents: (state) => state.events.length,
   },
   actions: {
-    fetchEvent({ commit }, id) {
+    createEvent(event) {
+      return EventService.postEvent(event)
+        .then(() => {
+          this.events.push(event)
+        })
+        .catch((error) => {
+          throw error
+        })
+    },
+    fetchEvent(id) {
       return EventService.getEvent(id)
         .then((response) => {
-          commit('SET_EVENT', response.data)
+          this.event = response.data
         })
         .catch((error) => {
           throw error
