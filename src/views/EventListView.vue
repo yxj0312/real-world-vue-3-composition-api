@@ -1,10 +1,8 @@
 <script setup>
 import EventCard from '@/components/EventCard.vue'
-import EventService from '@/services/EventService.js'
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import { useEventStore } from '../stores/EventStore'
 
-const events = ref(null)
 const eventStore = useEventStore()
 
 onMounted(() => {
