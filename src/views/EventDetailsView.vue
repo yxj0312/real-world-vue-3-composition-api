@@ -1,24 +1,20 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useEventStore } from '../stores/EventStore'
+import { computed } from 'vue'
 
-const event = ref(null)
 const props = defineProps({
   id: {
     required: true,
   },
 })
 const eventStore = useEventStore()
+const event = computed(() => eventStore.event)
 
 onMounted(() => {
-  eventStore
-    .fetchEvent(props.id)
-    .then((response) => {
-      event.value = response.data
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+  eventStore.fetchEvent(props.id).catch((error) => {
+    console.log(error)
+  })
 })
 </script>
 <template>
