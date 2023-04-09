@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import EventListView from '../views/EventListView.vue'
 import EventDetailsView from '../views/EventDetailsView.vue'
 import EventCreateView from '../views/EventCreateView.vue'
+import ErrorDisplay from '../views/ErrorDisplay.vue'
 import AboutView from '../views/AboutView.vue'
 
 const router = createRouter({
@@ -28,6 +29,12 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView,
+    },
+    {
+      path: '/error/:error',
+      name: 'ErrorDisplay',
+      props: true,
+      component: ErrorDisplay,
     },
   ],
 })
