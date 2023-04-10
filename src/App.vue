@@ -13,6 +13,8 @@ const useStore = useUserStore()
           <RouterLink :to="{ name: 'event-list' }">Events</RouterLink> |
           <RouterLink :to="{ name: 'about' }">About</RouterLink>
           |
+          <RouterLink :to="{ name: 'event-create' }">Create Event</RouterLink>
+          |
           <p>Logged in as {{ useStore.firstName }}</p>
         </nav>
       </div>

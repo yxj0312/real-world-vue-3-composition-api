@@ -22,7 +22,7 @@ const router = createRouter({
     },
     {
       path: '/event/create',
-      name: 'EventCreate',
+      name: 'event-create',
       component: EventCreateView,
     },
     {
