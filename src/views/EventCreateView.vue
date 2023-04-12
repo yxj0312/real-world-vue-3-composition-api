@@ -2,9 +2,51 @@
 import { v4 as uuidv4 } from 'uuid'
 import { useEventStore } from '../stores/EventStore'
 import { useUserStore } from '../stores/UserStore'
+import { useRouter } from 'vue-router'
 
 const eventStore = useEventStore()
 const userStore = useUserStore()
+const router = useRouter()
+const categories = [
+  'sustainability',
+  'nature',
+  'animal welfare',
+  'housing',
+  'education',
+  'food',
+  'community',
+]
+let event = {
+  id: '',
+  category: '',
+  title: '',
+  description: '',
+  location: '',
+  date: '',
+  time: '',
+  organizer: '',
+}
+const onSubmit = () => {
+  event = {
+    ...event,
+    id: uuidv4(),
+    organizer: userStore.user,
+  }
+  eventStore
+    .createEvent(event)
+    .then(() => {
+      router.push({
+        name: 'EventDetailsView',
+        params: { id: event.id },
+      })
+    })
+    .catch((error) => {
+      router.push({
+        name: 'ErrorDisplay',
+        params: { error: error },
+      })
+    })
+}
 </script>
 
 <template>

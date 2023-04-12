@@ -29,6 +29,26 @@
       "date": "July 22, 2022",
       "time": "11:00",
       "organizer": "Carey Wales"
+    },
+    {
+      "id": "4d8733e1-73d4-41c1-b6e9-d51c0e21f401",
+      "category": "sustainability",
+      "title": "123",
+      "description": "321",
+      "location": "123123",
+      "date": "assd",
+      "time": "123",
+      "organizer": "Ben Hong"
+    },
+    {
+      "id": "803627ca-400f-4846-84a6-4ea004d090fe",
+      "category": "nature",
+      "title": "123",
+      "description": "123",
+      "location": "123",
+      "date": "123",
+      "time": "123",
+      "organizer": "Ben Hong"
     }
   ]
 }
