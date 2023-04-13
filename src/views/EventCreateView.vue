@@ -36,7 +36,7 @@ const onSubmit = () => {
     .createEvent(event)
     .then(() => {
       router.push({
-        name: 'EventDetailsView',
+        name: 'event-details',
         params: { id: event.id },
       })
     })
